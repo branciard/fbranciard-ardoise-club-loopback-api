@@ -22,7 +22,8 @@
     "public": false
   },
   "Car": {
-    "dataSource": "db"
+    "dataSource": "db",
+    "public": true
   },
   "Customer": {
     "dataSource": "db"
@@ -35,5 +36,41 @@
   },
   "Note": {
     "dataSource": "db"
+  },
+  "DailyBoard": {
+    "dataSource": "db",
+    "public": true
+  },
+  "DailyItem": {
+    "dataSource": "db",
+    "public": true
+  },
+  "NoWasteBoard": {
+    "dataSource": "db",
+    "public": true
+  },
+  "NoWasteItem": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Shop": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Profile": {
+    "dataSource": "db",
+    "public": true
+  },
+  "NoWasteBoardSubscription": {
+    "dataSource": "db",
+    "public": true
+  },
+  "DailyBoardSubscription": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Address": {
+    "dataSource": "db",
+    "public": true
   }
 }

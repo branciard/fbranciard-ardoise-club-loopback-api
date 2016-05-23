@@ -30,5 +30,14 @@
         }
       }
     ]
+  },
+  "cloudant": {
+    "url": "https://1e8f9521-94d2-456a-a619-54fb6c6bd1f0-bluemix:04ee2d37facaabe5f47d2cc2c998a29f648bf0681a1c322fdeda18ebbd12b634@1e8f9521-94d2-456a-a619-54fb6c6bd1f0-bluemix.cloudant.com",
+    "database": "fbranciardcourseradb",
+    "username": "1e8f9521-94d2-456a-a619-54fb6c6bd1f0-bluemix",
+    "password": "04ee2d37facaabe5f47d2cc2c998a29f648bf0681a1c322fdeda18ebbd12b634",
+    "name": "cloudant",
+    "connector": "cloudant",
+    "modelIndex": ""
   }
 }

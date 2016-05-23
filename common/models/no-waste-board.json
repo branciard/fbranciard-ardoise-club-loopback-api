@@ -1,0 +1,24 @@
+{
+  "name": "NoWasteBoard",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "noWasteItems": {
+      "type": [
+        "object"
+      ],
+      "required": false
+    },
+    "title": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

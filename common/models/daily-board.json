@@ -1,0 +1,24 @@
+{
+  "name": "DailyBoard",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "dailyitems": {
+      "type": [
+        "object"
+      ],
+      "required": false
+    },
+    "title": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

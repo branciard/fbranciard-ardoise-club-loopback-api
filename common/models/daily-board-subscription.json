@@ -1,14 +1,9 @@
 {
-  "name": "Note",
-  "plural": "notes",
+  "name": "DailyBoardSubscription",
   "base": "PersistedModel",
+  "idInjection": true,
   "options": {
-    "mysql": {
-      "table": "note"
-    },
-    "mongodb": {
-      "collection": "note"
-    }
+    "validateUpsert": true
   },
   "properties": {},
   "validations": [],

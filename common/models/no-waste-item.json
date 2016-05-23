@@ -1,0 +1,26 @@
+{
+  "name": "NoWasteItem",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "itemPostion": {
+      "type": "number",
+      "required": true
+    },
+    "itemRemainingNumber": {
+      "type": "number",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Profile",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "inShopOwnerMode": {
+      "type": "boolean",
+      "required": false,
+      "description": "default false"
+    },
+    "name": {
+      "type": "number",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
