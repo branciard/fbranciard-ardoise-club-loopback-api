@@ -1,12 +1,15 @@
 module.exports = function (app) {
   var cloudantDB = app.dataSources.cloudant;
+  console.error('cloudantDB.automigrate start');
+  
   cloudantDB.automigrate('Profile', function (err) {
     if (err) throw (err);
+ 
     var Profile = app.models.Profile;
     Profile.find({ where: { username: 'Admin' }, limit: 1 }, function (err, users) {
-
-      if (!users) {
-        Profile.create([
+    
+      if ( ! JSON.stringify(users) === '[]') {
+       Profile.create([
           { username: 'Admin', email: 'francoisbranciard@gmail.com', password: 'abcdef' }
         ], function (err, users) {
           if (err) return debug(err);
@@ -34,7 +37,7 @@ module.exports = function (app) {
         })
       }
       else {
-
+    	  console.error('admin user already in base');
       }
 
     });
