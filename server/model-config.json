@@ -54,11 +54,11 @@
     "public": true
   },
   "Shop": {
-    "dataSource": "db",
+    "dataSource": "cloudant",
     "public": true
   },
   "Profile": {
-    "dataSource": "db",
+    "dataSource": "cloudant",
     "public": true
   },
   "NoWasteBoardSubscription": {

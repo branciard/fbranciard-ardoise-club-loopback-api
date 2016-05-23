@@ -2921,6 +2921,29 @@ paths:
           schema:
             type: file
       deprecated: false
+  '/Shops/{id}/belongsToProfile':
+    get:
+      tags:
+        - Shop
+      summary: Fetches belongsTo relation belongsToProfile.
+      operationId: Shop.prototype.__get__belongsToProfile
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Profile'
+      deprecated: false
   /Shops:
     post:
       tags:
@@ -3270,6 +3293,91 @@ paths:
           description: Request was successful
           schema:
             $ref: '#/definitions/AccessToken'
+      deprecated: false
+  '/Profiles/{id}/hasOneShop':
+    get:
+      tags:
+        - Profile
+      summary: Fetches hasOne relation hasOneShop.
+      operationId: Profile.prototype.__get__hasOneShop
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Shop'
+      deprecated: false
+    post:
+      tags:
+        - Profile
+      summary: Creates a new instance in hasOneShop of this model.
+      operationId: Profile.prototype.__create__hasOneShop
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Shop'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Shop'
+      deprecated: false
+    put:
+      tags:
+        - Profile
+      summary: Update hasOneShop of this model.
+      operationId: Profile.prototype.__update__hasOneShop
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Shop'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Shop'
+      deprecated: false
+    delete:
+      tags:
+        - Profile
+      summary: Deletes hasOneShop of this model.
+      operationId: Profile.prototype.__destroy__hasOneShop
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
       deprecated: false
   '/Profiles/{id}/accessTokens':
     get:
@@ -4589,8 +4697,7 @@ definitions:
         type: string
         format: date
       userId:
-        type: number
-        format: double
+        type: string
     required:
       - id
     additionalProperties: false
@@ -4745,30 +4852,6 @@ definitions:
       - itemRemainingNumber
       - name
     additionalProperties: false
-  Shop:
-    properties:
-      category:
-        type: string
-      clientsNumber:
-        type: number
-        format: double
-      id:
-        type: number
-        format: double
-      name:
-        type: string
-      pepsShop:
-        type: number
-        format: double
-      tel:
-        type: string
-    required:
-      - category
-      - clientsNumber
-      - id
-      - name
-      - pepsShop
-    additionalProperties: false
   Profile:
     properties:
       inShopOwnerMode:
@@ -4798,10 +4881,37 @@ definitions:
         type: string
         format: date
       id:
-        type: number
-        format: double
+        type: string
     required:
       - email
+    additionalProperties: false
+  Shop:
+    properties:
+      category:
+        type: string
+      clientsNumber:
+        type: number
+        format: double
+      id:
+        type: number
+        format: double
+      name:
+        type: string
+      pepsShop:
+        type: number
+        format: double
+      tel:
+        type: string
+      profileId:
+        type: string
+      belongsToProfileId:
+        type: string
+    required:
+      - category
+      - clientsNumber
+      - id
+      - name
+      - pepsShop
     additionalProperties: false
   NoWasteBoardSubscription:
     properties:

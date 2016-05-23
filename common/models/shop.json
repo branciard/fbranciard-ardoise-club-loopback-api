@@ -34,7 +34,7 @@
   },
   "validations": [],
   "relations": {
-   "belongsToProfile": {
+    "belongsToProfile": {
       "type": "belongsTo",
       "model": "Profile",
       "foreignKey": ""
