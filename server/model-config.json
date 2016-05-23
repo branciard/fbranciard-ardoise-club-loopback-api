@@ -5,52 +5,39 @@
       "./models"
     ]
   },
+  "User": {
+    "dataSource": "db"
+  },
   "AccessToken": {
     "dataSource": "db",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "cloudant",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "cloudant",
     "public": false
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "cloudant",
     "public": false
   },
-  "Car": {
-    "dataSource": "db",
-    "public": true
-  },
-  "Customer": {
-    "dataSource": "db"
-  },
-  "Inventory": {
-    "dataSource": "db"
-  },
-  "Location": {
-    "dataSource": "db"
-  },
-  "Note": {
-    "dataSource": "db"
-  },
   "DailyBoard": {
-    "dataSource": "db",
+    "dataSource": "cloudant",
     "public": true
   },
   "DailyItem": {
-    "dataSource": "db",
+    "dataSource": "cloudant",
     "public": true
   },
   "NoWasteBoard": {
-    "dataSource": "db",
+    "dataSource": "cloudant",
     "public": true
   },
   "NoWasteItem": {
-    "dataSource": "db",
+    "dataSource": "cloudant",
     "public": true
   },
   "Shop": {
@@ -62,15 +49,15 @@
     "public": true
   },
   "NoWasteBoardSubscription": {
-    "dataSource": "db",
+    "dataSource": "cloudant",
     "public": true
   },
   "DailyBoardSubscription": {
-    "dataSource": "db",
+    "dataSource": "cloudant",
     "public": true
   },
   "Address": {
-    "dataSource": "db",
+    "dataSource": "cloudant",
     "public": true
   }
 }
