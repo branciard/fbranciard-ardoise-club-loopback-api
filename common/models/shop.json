@@ -33,7 +33,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+   "belongsToProfile": {
+      "type": "belongsTo",
+      "model": "Profile",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

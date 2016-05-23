@@ -17,7 +17,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+   "hasOneShop": {
+      "type": "hasOne",
+      "model": "Shop",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }
