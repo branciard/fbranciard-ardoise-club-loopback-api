@@ -11,18 +11,19 @@ var inventory = require('./inventory.json');
 var locations = require('./locations.json');
 
 module.exports = function(app, cb) {
-  var Inventory = app.models.Inventory;
+  /*var Inventory = app.models.Inventory;
   var Location = app.models.Location;
   var Customer = app.models.Customer;
   var Car = app.models.Car;
+  */
   var db = app.dataSources.db;
 
   var ids = {
   };
 
   function importData(Model, data, cb) {
-    // console.log('Importing data for ' + Model.modelName);
-    Model.destroyAll(function(err) {
+     console.log('do noting' );
+    /*Model.destroyAll(function(err) {
       if (err) {
         cb(err);
         return;
@@ -36,7 +37,7 @@ module.exports = function(app, cb) {
         d.id = ids[Model.modelName]++;
         Model.create(d, callback);
       }, cb);
-    });
+    });*/
   }
 
   async.series([
@@ -44,10 +45,10 @@ module.exports = function(app, cb) {
       db.autoupdate(cb);
     },
 
-    importData.bind(null, Location, locations),
-    importData.bind(null, Car, cars),
-    importData.bind(null, Inventory, inventory),
-    importData.bind(null, Customer, customers)
+   // importData.bind(null, Location, locations),
+    //importData.bind(null, Car, cars),
+    //importData.bind(null, Inventory, inventory),
+    //importData.bind(null, Customer, customers)
   ], function(err/*, results*/) {
     cb(err);
   });
