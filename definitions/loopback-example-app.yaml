@@ -1,4 +1,273 @@
 paths:
+  '/DailyBoards/{id}/shop':
+    get:
+      tags:
+        - DailyBoard
+      summary: Fetches belongsTo relation shop.
+      operationId: DailyBoard.prototype.__get__shop
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Shop'
+      deprecated: false
+  '/DailyBoards/{id}/dailyboardsubscription/{fk}':
+    get:
+      tags:
+        - DailyBoard
+      summary: Find a related item by id for dailyboardsubscription.
+      operationId: DailyBoard.prototype.__findById__dailyboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for dailyboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Profile'
+      deprecated: false
+    delete:
+      tags:
+        - DailyBoard
+      summary: Delete a related item by id for dailyboardsubscription.
+      operationId: DailyBoard.prototype.__destroyById__dailyboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for dailyboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - DailyBoard
+      summary: Update a related item by id for dailyboardsubscription.
+      operationId: DailyBoard.prototype.__updateById__dailyboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for dailyboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Profile'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Profile'
+      deprecated: false
+  '/DailyBoards/{id}/dailyboardsubscription/rel/{fk}':
+    put:
+      tags:
+        - DailyBoard
+      summary: Add a related item by id for dailyboardsubscription.
+      operationId: DailyBoard.prototype.__link__dailyboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for dailyboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/DailyBoardSubscription'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/DailyBoardSubscription'
+      deprecated: false
+    delete:
+      tags:
+        - DailyBoard
+      summary: Remove the dailyboardsubscription relation to an item by id.
+      operationId: DailyBoard.prototype.__unlink__dailyboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for dailyboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    head:
+      tags:
+        - DailyBoard
+      summary: Check the existence of dailyboardsubscription relation to an item by id.
+      operationId: DailyBoard.prototype.__exists__dailyboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for dailyboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: boolean
+      deprecated: false
+  '/DailyBoards/{id}/dailyboardsubscription':
+    get:
+      tags:
+        - DailyBoard
+      summary: Queries dailyboardsubscription of DailyBoard.
+      operationId: DailyBoard.prototype.__get__dailyboardsubscription
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Profile'
+      deprecated: false
+    post:
+      tags:
+        - DailyBoard
+      summary: Creates a new instance in dailyboardsubscription of this model.
+      operationId: DailyBoard.prototype.__create__dailyboardsubscription
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Profile'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Profile'
+      deprecated: false
+    delete:
+      tags:
+        - DailyBoard
+      summary: Deletes all dailyboardsubscription of this model.
+      operationId: DailyBoard.prototype.__delete__dailyboardsubscription
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/DailyBoards/{id}/dailyboardsubscription/count':
+    get:
+      tags:
+        - DailyBoard
+      summary: Counts dailyboardsubscription of DailyBoard.
+      operationId: DailyBoard.prototype.__count__dailyboardsubscription
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
   /DailyBoards:
     post:
       tags:
@@ -272,6 +541,176 @@ paths:
           description: Request was successful
           schema:
             type: file
+      deprecated: false
+  '/DailyItems/{id}/dailyboard/{fk}':
+    get:
+      tags:
+        - DailyItem
+      summary: Find a related item by id for dailyboard.
+      operationId: DailyItem.prototype.__findById__dailyboard
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for dailyboard
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/DailyBoard'
+      deprecated: false
+    delete:
+      tags:
+        - DailyItem
+      summary: Delete a related item by id for dailyboard.
+      operationId: DailyItem.prototype.__destroyById__dailyboard
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for dailyboard
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - DailyItem
+      summary: Update a related item by id for dailyboard.
+      operationId: DailyItem.prototype.__updateById__dailyboard
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for dailyboard
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/DailyBoard'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/DailyBoard'
+      deprecated: false
+  '/DailyItems/{id}/dailyboard':
+    get:
+      tags:
+        - DailyItem
+      summary: Queries dailyboard of DailyItem.
+      operationId: DailyItem.prototype.__get__dailyboard
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/DailyBoard'
+      deprecated: false
+    post:
+      tags:
+        - DailyItem
+      summary: Creates a new instance in dailyboard of this model.
+      operationId: DailyItem.prototype.__create__dailyboard
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/DailyBoard'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/DailyBoard'
+      deprecated: false
+    delete:
+      tags:
+        - DailyItem
+      summary: Deletes all dailyboard of this model.
+      operationId: DailyItem.prototype.__delete__dailyboard
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/DailyItems/{id}/dailyboard/count':
+    get:
+      tags:
+        - DailyItem
+      summary: Counts dailyboard of DailyItem.
+      operationId: DailyItem.prototype.__count__dailyboard
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
       deprecated: false
   /DailyItems:
     post:
@@ -547,6 +986,277 @@ paths:
           schema:
             type: file
       deprecated: false
+  '/NoWasteBoards/{id}/shop':
+    get:
+      tags:
+        - NoWasteBoard
+      summary: Fetches belongsTo relation shop.
+      operationId: NoWasteBoard.prototype.__get__shop
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Shop'
+      deprecated: false
+  '/NoWasteBoards/{id}/nowasteboardsubscription/{fk}':
+    get:
+      tags:
+        - NoWasteBoard
+      summary: Find a related item by id for nowasteboardsubscription.
+      operationId: NoWasteBoard.prototype.__findById__nowasteboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for nowasteboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Profile'
+      deprecated: false
+    delete:
+      tags:
+        - NoWasteBoard
+      summary: Delete a related item by id for nowasteboardsubscription.
+      operationId: NoWasteBoard.prototype.__destroyById__nowasteboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for nowasteboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - NoWasteBoard
+      summary: Update a related item by id for nowasteboardsubscription.
+      operationId: NoWasteBoard.prototype.__updateById__nowasteboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for nowasteboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Profile'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Profile'
+      deprecated: false
+  '/NoWasteBoards/{id}/nowasteboardsubscription/rel/{fk}':
+    put:
+      tags:
+        - NoWasteBoard
+      summary: Add a related item by id for nowasteboardsubscription.
+      operationId: NoWasteBoard.prototype.__link__nowasteboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for nowasteboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/NoWasteBoardSubscription'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/NoWasteBoardSubscription'
+      deprecated: false
+    delete:
+      tags:
+        - NoWasteBoard
+      summary: Remove the nowasteboardsubscription relation to an item by id.
+      operationId: NoWasteBoard.prototype.__unlink__nowasteboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for nowasteboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    head:
+      tags:
+        - NoWasteBoard
+      summary: >-
+        Check the existence of nowasteboardsubscription relation to an item by
+        id.
+      operationId: NoWasteBoard.prototype.__exists__nowasteboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for nowasteboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: boolean
+      deprecated: false
+  '/NoWasteBoards/{id}/nowasteboardsubscription':
+    get:
+      tags:
+        - NoWasteBoard
+      summary: Queries nowasteboardsubscription of NoWasteBoard.
+      operationId: NoWasteBoard.prototype.__get__nowasteboardsubscription
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Profile'
+      deprecated: false
+    post:
+      tags:
+        - NoWasteBoard
+      summary: Creates a new instance in nowasteboardsubscription of this model.
+      operationId: NoWasteBoard.prototype.__create__nowasteboardsubscription
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Profile'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Profile'
+      deprecated: false
+    delete:
+      tags:
+        - NoWasteBoard
+      summary: Deletes all nowasteboardsubscription of this model.
+      operationId: NoWasteBoard.prototype.__delete__nowasteboardsubscription
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/NoWasteBoards/{id}/nowasteboardsubscription/count':
+    get:
+      tags:
+        - NoWasteBoard
+      summary: Counts nowasteboardsubscription of NoWasteBoard.
+      operationId: NoWasteBoard.prototype.__count__nowasteboardsubscription
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
   /NoWasteBoards:
     post:
       tags:
@@ -820,6 +1530,176 @@ paths:
           description: Request was successful
           schema:
             type: file
+      deprecated: false
+  '/NoWasteItems/{id}/nowasteboard/{fk}':
+    get:
+      tags:
+        - NoWasteItem
+      summary: Find a related item by id for nowasteboard.
+      operationId: NoWasteItem.prototype.__findById__nowasteboard
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for nowasteboard
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/NoWasteBoard'
+      deprecated: false
+    delete:
+      tags:
+        - NoWasteItem
+      summary: Delete a related item by id for nowasteboard.
+      operationId: NoWasteItem.prototype.__destroyById__nowasteboard
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for nowasteboard
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - NoWasteItem
+      summary: Update a related item by id for nowasteboard.
+      operationId: NoWasteItem.prototype.__updateById__nowasteboard
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for nowasteboard
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/NoWasteBoard'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/NoWasteBoard'
+      deprecated: false
+  '/NoWasteItems/{id}/nowasteboard':
+    get:
+      tags:
+        - NoWasteItem
+      summary: Queries nowasteboard of NoWasteItem.
+      operationId: NoWasteItem.prototype.__get__nowasteboard
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/NoWasteBoard'
+      deprecated: false
+    post:
+      tags:
+        - NoWasteItem
+      summary: Creates a new instance in nowasteboard of this model.
+      operationId: NoWasteItem.prototype.__create__nowasteboard
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/NoWasteBoard'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/NoWasteBoard'
+      deprecated: false
+    delete:
+      tags:
+        - NoWasteItem
+      summary: Deletes all nowasteboard of this model.
+      operationId: NoWasteItem.prototype.__delete__nowasteboard
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/NoWasteItems/{id}/nowasteboard/count':
+    get:
+      tags:
+        - NoWasteItem
+      summary: Counts nowasteboard of NoWasteItem.
+      operationId: NoWasteItem.prototype.__count__nowasteboard
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
       deprecated: false
   /NoWasteItems:
     post:
@@ -1095,12 +1975,182 @@ paths:
           schema:
             type: file
       deprecated: false
-  '/Shops/{id}/belongsToProfile':
+  '/Shops/{id}/dailyboard':
     get:
       tags:
         - Shop
-      summary: Fetches belongsTo relation belongsToProfile.
-      operationId: Shop.prototype.__get__belongsToProfile
+      summary: Fetches hasOne relation dailyboard.
+      operationId: Shop.prototype.__get__dailyboard
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/DailyBoard'
+      deprecated: false
+    post:
+      tags:
+        - Shop
+      summary: Creates a new instance in dailyboard of this model.
+      operationId: Shop.prototype.__create__dailyboard
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/DailyBoard'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/DailyBoard'
+      deprecated: false
+    put:
+      tags:
+        - Shop
+      summary: Update dailyboard of this model.
+      operationId: Shop.prototype.__update__dailyboard
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/DailyBoard'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/DailyBoard'
+      deprecated: false
+    delete:
+      tags:
+        - Shop
+      summary: Deletes dailyboard of this model.
+      operationId: Shop.prototype.__destroy__dailyboard
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/Shops/{id}/nowasteboard':
+    get:
+      tags:
+        - Shop
+      summary: Fetches hasOne relation nowasteboard.
+      operationId: Shop.prototype.__get__nowasteboard
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/NoWasteBoard'
+      deprecated: false
+    post:
+      tags:
+        - Shop
+      summary: Creates a new instance in nowasteboard of this model.
+      operationId: Shop.prototype.__create__nowasteboard
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/NoWasteBoard'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/NoWasteBoard'
+      deprecated: false
+    put:
+      tags:
+        - Shop
+      summary: Update nowasteboard of this model.
+      operationId: Shop.prototype.__update__nowasteboard
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/NoWasteBoard'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/NoWasteBoard'
+      deprecated: false
+    delete:
+      tags:
+        - Shop
+      summary: Deletes nowasteboard of this model.
+      operationId: Shop.prototype.__destroy__nowasteboard
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/Shops/{id}/profile':
+    get:
+      tags:
+        - Shop
+      summary: Fetches belongsTo relation profile.
+      operationId: Shop.prototype.__get__profile
       parameters:
         - name: refresh
           in: query
@@ -1117,6 +2167,91 @@ paths:
           description: Request was successful
           schema:
             $ref: '#/definitions/Profile'
+      deprecated: false
+  '/Shops/{id}/address':
+    get:
+      tags:
+        - Shop
+      summary: Fetches hasOne relation address.
+      operationId: Shop.prototype.__get__address
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Address'
+      deprecated: false
+    post:
+      tags:
+        - Shop
+      summary: Creates a new instance in address of this model.
+      operationId: Shop.prototype.__create__address
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Address'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Address'
+      deprecated: false
+    put:
+      tags:
+        - Shop
+      summary: Update address of this model.
+      operationId: Shop.prototype.__update__address
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Address'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Address'
+      deprecated: false
+    delete:
+      tags:
+        - Shop
+      summary: Deletes address of this model.
+      operationId: Shop.prototype.__destroy__address
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
       deprecated: false
   /Shops:
     post:
@@ -1468,12 +2603,12 @@ paths:
           schema:
             $ref: '#/definitions/AccessToken'
       deprecated: false
-  '/Profiles/{id}/hasOneShop':
+  '/Profiles/{id}/shop':
     get:
       tags:
         - Profile
-      summary: Fetches hasOne relation hasOneShop.
-      operationId: Profile.prototype.__get__hasOneShop
+      summary: Fetches hasOne relation shop.
+      operationId: Profile.prototype.__get__shop
       parameters:
         - name: refresh
           in: query
@@ -1494,8 +2629,8 @@ paths:
     post:
       tags:
         - Profile
-      summary: Creates a new instance in hasOneShop of this model.
-      operationId: Profile.prototype.__create__hasOneShop
+      summary: Creates a new instance in shop of this model.
+      operationId: Profile.prototype.__create__shop
       parameters:
         - name: data
           in: body
@@ -1517,8 +2652,8 @@ paths:
     put:
       tags:
         - Profile
-      summary: Update hasOneShop of this model.
-      operationId: Profile.prototype.__update__hasOneShop
+      summary: Update shop of this model.
+      operationId: Profile.prototype.__update__shop
       parameters:
         - name: data
           in: body
@@ -1540,8 +2675,8 @@ paths:
     delete:
       tags:
         - Profile
-      summary: Deletes hasOneShop of this model.
-      operationId: Profile.prototype.__destroy__hasOneShop
+      summary: Deletes shop of this model.
+      operationId: Profile.prototype.__destroy__shop
       parameters:
         - name: id
           in: path
@@ -1552,6 +2687,312 @@ paths:
       responses:
         '204':
           description: Request was successful
+      deprecated: false
+  '/Profiles/{id}/nowasteboardsubscription/{fk}':
+    get:
+      tags:
+        - Profile
+      summary: Find a related item by id for nowasteboardsubscription.
+      operationId: Profile.prototype.__findById__nowasteboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for nowasteboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/NoWasteBoard'
+      deprecated: false
+    delete:
+      tags:
+        - Profile
+      summary: Delete a related item by id for nowasteboardsubscription.
+      operationId: Profile.prototype.__destroyById__nowasteboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for nowasteboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - Profile
+      summary: Update a related item by id for nowasteboardsubscription.
+      operationId: Profile.prototype.__updateById__nowasteboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for nowasteboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/NoWasteBoard'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/NoWasteBoard'
+      deprecated: false
+  '/Profiles/{id}/nowasteboardsubscription/rel/{fk}':
+    put:
+      tags:
+        - Profile
+      summary: Add a related item by id for nowasteboardsubscription.
+      operationId: Profile.prototype.__link__nowasteboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for nowasteboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/NoWasteBoardSubscription'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/NoWasteBoardSubscription'
+      deprecated: false
+    delete:
+      tags:
+        - Profile
+      summary: Remove the nowasteboardsubscription relation to an item by id.
+      operationId: Profile.prototype.__unlink__nowasteboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for nowasteboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    head:
+      tags:
+        - Profile
+      summary: >-
+        Check the existence of nowasteboardsubscription relation to an item by
+        id.
+      operationId: Profile.prototype.__exists__nowasteboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for nowasteboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: boolean
+      deprecated: false
+  '/Profiles/{id}/dailyboardsubscription/{fk}':
+    get:
+      tags:
+        - Profile
+      summary: Find a related item by id for dailyboardsubscription.
+      operationId: Profile.prototype.__findById__dailyboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for dailyboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/DailyBoard'
+      deprecated: false
+    delete:
+      tags:
+        - Profile
+      summary: Delete a related item by id for dailyboardsubscription.
+      operationId: Profile.prototype.__destroyById__dailyboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for dailyboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - Profile
+      summary: Update a related item by id for dailyboardsubscription.
+      operationId: Profile.prototype.__updateById__dailyboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for dailyboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/DailyBoard'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/DailyBoard'
+      deprecated: false
+  '/Profiles/{id}/dailyboardsubscription/rel/{fk}':
+    put:
+      tags:
+        - Profile
+      summary: Add a related item by id for dailyboardsubscription.
+      operationId: Profile.prototype.__link__dailyboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for dailyboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/DailyBoardSubscription'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/DailyBoardSubscription'
+      deprecated: false
+    delete:
+      tags:
+        - Profile
+      summary: Remove the dailyboardsubscription relation to an item by id.
+      operationId: Profile.prototype.__unlink__dailyboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for dailyboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    head:
+      tags:
+        - Profile
+      summary: Check the existence of dailyboardsubscription relation to an item by id.
+      operationId: Profile.prototype.__exists__dailyboardsubscription
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for dailyboardsubscription
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: boolean
       deprecated: false
   '/Profiles/{id}/accessTokens':
     get:
@@ -1624,6 +3065,194 @@ paths:
         - Profile
       summary: Counts accessTokens of Profile.
       operationId: Profile.prototype.__count__accessTokens
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/Profiles/{id}/nowasteboardsubscription':
+    get:
+      tags:
+        - Profile
+      summary: Queries nowasteboardsubscription of Profile.
+      operationId: Profile.prototype.__get__nowasteboardsubscription
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/NoWasteBoard'
+      deprecated: false
+    post:
+      tags:
+        - Profile
+      summary: Creates a new instance in nowasteboardsubscription of this model.
+      operationId: Profile.prototype.__create__nowasteboardsubscription
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/NoWasteBoard'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/NoWasteBoard'
+      deprecated: false
+    delete:
+      tags:
+        - Profile
+      summary: Deletes all nowasteboardsubscription of this model.
+      operationId: Profile.prototype.__delete__nowasteboardsubscription
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/Profiles/{id}/nowasteboardsubscription/count':
+    get:
+      tags:
+        - Profile
+      summary: Counts nowasteboardsubscription of Profile.
+      operationId: Profile.prototype.__count__nowasteboardsubscription
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/Profiles/{id}/dailyboardsubscription':
+    get:
+      tags:
+        - Profile
+      summary: Queries dailyboardsubscription of Profile.
+      operationId: Profile.prototype.__get__dailyboardsubscription
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/DailyBoard'
+      deprecated: false
+    post:
+      tags:
+        - Profile
+      summary: Creates a new instance in dailyboardsubscription of this model.
+      operationId: Profile.prototype.__create__dailyboardsubscription
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/DailyBoard'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/DailyBoard'
+      deprecated: false
+    delete:
+      tags:
+        - Profile
+      summary: Deletes all dailyboardsubscription of this model.
+      operationId: Profile.prototype.__delete__dailyboardsubscription
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/Profiles/{id}/dailyboardsubscription/count':
+    get:
+      tags:
+        - Profile
+      summary: Counts dailyboardsubscription of Profile.
+      operationId: Profile.prototype.__count__dailyboardsubscription
       parameters:
         - name: where
           in: query
@@ -2559,6 +4188,29 @@ paths:
           schema:
             type: file
       deprecated: false
+  '/Addresses/{id}/shop':
+    get:
+      tags:
+        - Address
+      summary: Fetches belongsTo relation shop.
+      operationId: Address.prototype.__get__shop
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Shop'
+      deprecated: false
   /Addresses:
     post:
       tags:
@@ -2834,63 +4486,33 @@ paths:
             type: file
       deprecated: false
 definitions:
-  DailyBoard:
-    properties:
-      dailyitems:
-        type: array
-        items:
-          type: object
-      title:
-        type: string
-      id:
-        type: string
-    additionalProperties: false
   x-any:
     properties: {}
-  DailyItem:
+  Shop:
     properties:
-      itemPosition:
+      category:
+        type: string
+      clientsNumber:
         type: number
         format: double
       name:
         type: string
-      price:
+      pepsShop:
         type: number
         format: double
+      tel:
+        type: string
       id:
+        type: string
+      fk_shop_id:
+        type: string
+      fk_profile_id:
         type: string
     required:
-      - itemPosition
+      - category
+      - clientsNumber
       - name
-      - price
-    additionalProperties: false
-  NoWasteBoard:
-    properties:
-      noWasteItems:
-        type: array
-        items:
-          type: object
-      title:
-        type: string
-      id:
-        type: string
-    additionalProperties: false
-  NoWasteItem:
-    properties:
-      itemPostion:
-        type: number
-        format: double
-      itemRemainingNumber:
-        type: number
-        format: double
-      name:
-        type: string
-      id:
-        type: string
-    required:
-      - itemPostion
-      - itemRemainingNumber
-      - name
+      - pepsShop
     additionalProperties: false
   Profile:
     properties:
@@ -2925,33 +4547,106 @@ definitions:
     required:
       - email
     additionalProperties: false
-  Shop:
+  DailyBoardSubscription:
     properties:
-      category:
-        type: string
-      clientsNumber:
-        type: number
-        format: double
       id:
+        type: string
+    additionalProperties: false
+  DailyBoard:
+    properties:
+      dailyitems:
+        type: array
+        items:
+          type: object
+      title:
+        type: string
+      id:
+        type: string
+      fk_dailyboard_id:
+        type: string
+      fk_shop_id:
+        type: string
+    additionalProperties: false
+  DailyItem:
+    properties:
+      itemPosition:
         type: number
         format: double
       name:
         type: string
-      pepsShop:
+      price:
         type: number
         format: double
-      tel:
+      id:
         type: string
-      profileId:
-        type: string
-      belongsToProfileId:
-        type: string
+      dailyBoards:
+        type: array
+        items:
+          $ref: '#/definitions/DailyBoard'
     required:
-      - category
-      - clientsNumber
-      - id
+      - itemPosition
       - name
-      - pepsShop
+      - price
+    additionalProperties: false
+  NoWasteBoardSubscription:
+    properties:
+      id:
+        type: string
+    additionalProperties: false
+  NoWasteBoard:
+    properties:
+      noWasteItems:
+        type: array
+        items:
+          type: object
+      title:
+        type: string
+      id:
+        type: string
+      fk_nowasteboard_id:
+        type: string
+      fk_shop_id:
+        type: string
+    additionalProperties: false
+  NoWasteItem:
+    properties:
+      itemPostion:
+        type: number
+        format: double
+      itemRemainingNumber:
+        type: number
+        format: double
+      name:
+        type: string
+      id:
+        type: string
+      noWasteBoards:
+        type: array
+        items:
+          $ref: '#/definitions/NoWasteBoard'
+    required:
+      - itemPostion
+      - itemRemainingNumber
+      - name
+    additionalProperties: false
+  Address:
+    properties:
+      city:
+        type: string
+      geo:
+        $ref: '#/definitions/GeoPoint'
+      state:
+        type: string
+      street:
+        type: string
+      zipcode:
+        type: string
+      id:
+        type: string
+      fk_shop_id:
+        type: string
+      fk_address_id:
+        type: string
     additionalProperties: false
   AccessToken:
     properties:
@@ -2969,31 +4664,6 @@ definitions:
         type: string
     required:
       - id
-    additionalProperties: false
-  NoWasteBoardSubscription:
-    properties:
-      id:
-        type: string
-    additionalProperties: false
-  DailyBoardSubscription:
-    properties:
-      id:
-        type: string
-    additionalProperties: false
-  Address:
-    properties:
-      city:
-        type: string
-      geo:
-        $ref: '#/definitions/GeoPoint'
-      state:
-        type: string
-      street:
-        type: string
-      zipcode:
-        type: string
-      id:
-        type: string
     additionalProperties: false
   GeoPoint:
     properties:

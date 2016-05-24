@@ -14,11 +14,6 @@
       "type": "number",
       "required": true
     },
-    "id": {
-      "type": "number",
-      "id": true,
-      "required": true
-    },
     "name": {
       "type": "string",
       "required": true
@@ -34,12 +29,46 @@
   },
   "validations": [],
   "relations": {
-    "belongsToProfile": {
+    "profile": {
       "type": "belongsTo",
       "model": "Profile",
-      "foreignKey": ""
+      "foreignKey": "fk_profile_id"
+    },
+    "address": {
+      "type": "hasOne",
+      "model": "Address",
+      "foreignKey": "fk_address_id"
+    },
+    "dailyboard": {
+      "type": "hasOne",
+      "model": "DailyBoard",
+      "foreignKey": "fk_dailyboard_id"
+    },
+    "nowasteboard": {
+      "type": "hasOne",
+      "model": "NoWasteBoard",
+      "foreignKey": "fk_nowasteboard_id"
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {}
 }
