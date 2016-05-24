@@ -7,7 +7,18 @@
   },
   "properties": {},
   "validations": [],
-  "relations": {},
+  "relations": {
+      "profile": {
+      "type": "belongsTo",
+      "model": "Profile",
+      "foreignKey": "profileId"
+    },
+    "nowasteboard": {
+      "type": "belongsTo",
+      "model": "NoWasteBoard",
+      "foreignKey": "nowasteboardId"
+    }
+  },
   "acls": [
     {
       "accessType": "*",

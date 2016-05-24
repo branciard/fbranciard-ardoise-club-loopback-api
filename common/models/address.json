@@ -32,7 +32,7 @@
     "shop": {
       "type": "belongsTo",
       "model": "Shop",
-      "foreignKey": "fk_shop_id"
+      "foreignKey": "shopId"
     }
   },
   "acls": [
