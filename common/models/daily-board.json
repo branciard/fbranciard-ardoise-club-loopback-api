@@ -6,12 +6,6 @@
     "validateUpsert": true
   },
   "properties": {
-    "dailyitems": {
-      "type": [
-        "object"
-      ],
-      "required": false
-    },
     "title": {
       "type": "string",
       "required": false
@@ -30,10 +24,14 @@
       "foreignKey": "dailyboardId",
       "through": "DailyBoardSubscription"
     },
-    "dailyitems": {
+    "dailyItems": {
       "type": "embedsMany",
       "model": "DailyItem",
-      "foreignKey": "dailyitemsId"
+      "property": "dailyItemList",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
     }
   },
   "acls": [

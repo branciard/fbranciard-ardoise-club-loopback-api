@@ -6,12 +6,6 @@
     "validateUpsert": true
   },
   "properties": {
-    "noWasteItems": {
-      "type": [
-        "object"
-      ],
-      "required": false
-    },
     "title": {
       "type": "string",
       "required": false
@@ -30,10 +24,14 @@
       "foreignKey": "nowasteboardId",
       "through": "NoWasteBoardSubscription"
     },
-    "nowasteitems": {
+    "noWasteItems": {
       "type": "embedsMany",
       "model": "NoWasteItem",
-      "foreignKey": "nowasteitemsId"
+      "property": "noWasteItemList",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
     }
   },
   "acls": [

@@ -6,7 +6,7 @@
     "validateUpsert": true
   },
   "properties": {
-    "city": {
+     "city": {
       "type": "string",
       "required": false
     },
