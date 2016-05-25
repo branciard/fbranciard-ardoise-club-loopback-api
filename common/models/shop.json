@@ -32,22 +32,22 @@
     "profile": {
       "type": "belongsTo",
       "model": "Profile",
-      "foreignKey": "fk_profile_id"
+      "foreignKey": "profileId"
     },
     "address": {
       "type": "hasOne",
       "model": "Address",
-      "foreignKey": "fk_address_id"
+      "foreignKey": "addressId"
     },
     "dailyboard": {
       "type": "hasOne",
       "model": "DailyBoard",
-      "foreignKey": "fk_dailyboard_id"
+      "foreignKey": "dailyboardId"
     },
     "nowasteboard": {
       "type": "hasOne",
       "model": "NoWasteBoard",
-      "foreignKey": "fk_nowasteboard_id"
+      "foreignKey": "nowasteboardId"
     }
   },
   "acls": [

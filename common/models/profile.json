@@ -6,33 +6,24 @@
     "validateUpsert": true
   },
   "properties": {
-    "inShopOwnerMode": {
-      "type": "boolean",
-      "required": false,
-      "description": "default false"
-    },
-    "name": {
-      "type": "number",
-      "required": false
-    }
   },
   "validations": [],
   "relations": {
     "shop": {
       "type": "hasOne",
       "model": "Shop",
-      "foreignKey": "fk_shop_id"
+      "foreignKey": "shopId"
     },
-    "dailyboardsubscription": {
+    "dailyboards": {
       "type": "hasMany",
       "model": "DailyBoard",
-      "foreignKey": "fk_dailyboard_id",
+      "foreignKey": "profileId",
       "through": "DailyBoardSubscription"
     },
-    "nowasteboardsubscription": {
+    "nowasteboards": {
       "type": "hasMany",
       "model": "NoWasteBoard",
-      "foreignKey": "fk_nowasteboard_id",
+      "foreignKey": "profileId",
       "through": "NoWasteBoardSubscription"
     }
   },

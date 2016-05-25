@@ -22,9 +22,9 @@
   "validations": [],
   "relations": {
     "nowasteboard": {
-      "type": "embedsMany",
+      "type": "belongsTo",
       "model": "NoWasteBoard",
-      "foreignKey": "fk_nowasteboard_id"
+      "foreignKey": "nowasteboardId"
     }
   },
   "acls": [

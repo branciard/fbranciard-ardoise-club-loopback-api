@@ -22,9 +22,9 @@
   "validations": [],
   "relations": {
     "dailyboard": {
-      "type": "embedsMany",
+      "type": "belongsTo",
       "model": "DailyBoard",
-      "foreignKey": "fk_dailyboard_id"
+      "foreignKey": "dailyboardId"
     }
   },
   "acls": [
