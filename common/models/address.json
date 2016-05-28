@@ -6,7 +6,7 @@
     "validateUpsert": true
   },
   "properties": {
-     "city": {
+    "city": {
       "type": "string",
       "required": false
     },
@@ -32,7 +32,7 @@
     "shop": {
       "type": "belongsTo",
       "model": "Shop",
-      "foreignKey": "shopId"
+      "foreignKey": "addressId"
     }
   },
   "acls": [
