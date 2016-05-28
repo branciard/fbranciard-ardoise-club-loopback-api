@@ -24,7 +24,7 @@
     "dailyboard": {
       "type": "belongsTo",
       "model": "DailyBoard",
-      "foreignKey": "dailyboardId"
+      "foreignKey": "dailyBoardId"
     }
   },
   "acls": [

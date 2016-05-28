@@ -24,7 +24,7 @@
     "nowasteboard": {
       "type": "belongsTo",
       "model": "NoWasteBoard",
-      "foreignKey": "nowasteboardId"
+      "foreignKey": "noWasteBoardId"
     }
   },
   "acls": [
