@@ -25,7 +25,7 @@
     "tel": {
       "type": "string",
       "required": false
-    }
+    },
     "city": {
       "type": "string",
       "required": false
