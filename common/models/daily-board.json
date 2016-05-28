@@ -16,12 +16,12 @@
     "shop": {
       "type": "belongsTo",
       "model": "Shop",
-      "foreignKey": "dailyboardId"
+      "foreignKey": "shopId"
     },
     "profiles": {
       "type": "hasMany",
       "model": "Profile",
-      "foreignKey": "dailyboardId",
+      "foreignKey": "dailyBoardId",
       "through": "DailyBoardSubscription"
     },
     "dailyItems": {
