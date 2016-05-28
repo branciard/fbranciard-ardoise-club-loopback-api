@@ -12,7 +12,7 @@
     },
     "clientsNumber": {
       "type": "number",
-      "required": true
+      "required": false
     },
     "name": {
       "type": "string",
@@ -20,7 +20,7 @@
     },
     "pepsShop": {
       "type": "number",
-      "required": true
+      "required": false
     },
     "tel": {
       "type": "string",
