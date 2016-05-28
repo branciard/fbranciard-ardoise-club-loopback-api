@@ -16,7 +16,7 @@
     "shop": {
       "type": "belongsTo",
       "model": "Shop",
-      "foreignKey": "dailyBoardId"
+      "foreignKey": "dailyboardId"
     },
     "profiles": {
       "type": "hasMany",
