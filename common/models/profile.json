@@ -14,13 +14,13 @@
       "model": "Shop",
       "foreignKey": "profileId"
     },
-    "dailyboards": {
+    "dailyBoards": {
       "type": "hasMany",
       "model": "DailyBoard",
       "foreignKey": "profileId",
       "through": "DailyBoardSubscription"
     },
-    "nowasteboards": {
+    "noWasteBoards": {
       "type": "hasMany",
       "model": "NoWasteBoard",
       "foreignKey": "profileId",

@@ -13,7 +13,7 @@
       "model": "Profile",
       "foreignKey": "profileId"
     },
-    "nowasteboard": {
+    "noWasteBoard": {
       "type": "belongsTo",
       "model": "NoWasteBoard",
       "foreignKey": "noWasteBoardId"

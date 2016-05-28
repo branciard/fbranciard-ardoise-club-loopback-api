@@ -13,7 +13,7 @@
       "model": "Profile",
       "foreignKey": "profileId"
     },
-    "dailyboard": {
+    "dailyBoard": {
       "type": "belongsTo",
       "model": "DailyBoard",
       "foreignKey": "dailyBoardId"

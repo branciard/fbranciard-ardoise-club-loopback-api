@@ -39,12 +39,12 @@
       "model": "Address",
       "foreignKey": "shopId"
     },
-    "dailyboard": {
+    "dailyBoard": {
       "type": "hasOne",
       "model": "DailyBoard",
       "foreignKey": "shopId"
     },
-    "nowasteboard": {
+    "noWasteBoard": {
       "type": "hasOne",
       "model": "NoWasteBoard",
       "foreignKey": "shopId"
