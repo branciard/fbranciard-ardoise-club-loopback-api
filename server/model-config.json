@@ -27,7 +27,7 @@
   },
   "DailyItem": {
     "dataSource": "db",
-    "public": true
+    "public": false
   },
   "NoWasteBoard": {
     "dataSource": "cloudant",
@@ -35,7 +35,7 @@
   },
   "NoWasteItem": {
     "dataSource": "db",
-    "public": true
+    "public": false
   },
   "Shop": {
     "dataSource": "cloudant",
