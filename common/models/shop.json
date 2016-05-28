@@ -32,7 +32,7 @@
     "profile": {
       "type": "belongsTo",
       "model": "Profile",
-      "foreignKey": "profileId"
+      "foreignKey": "shopId"
     },
     "address": {
       "type": "hasOne",
