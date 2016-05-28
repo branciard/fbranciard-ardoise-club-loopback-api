@@ -16,7 +16,7 @@
     "shop": {
       "type": "belongsTo",
       "model": "Shop",
-      "foreignKey": "shopId"
+      "foreignKey": "noWasteBoardId"
     },
     "profiles": {
       "type": "hasMany",
