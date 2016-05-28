@@ -30,7 +30,7 @@
       "property": "noWasteItemList",
       "options": {
         "validate": true,
-        "forceId": true,
+        "forceId": false,
         "autoId": true
       }
     }

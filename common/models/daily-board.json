@@ -30,7 +30,7 @@
       "property": "dailyItemList",
       "options": {
         "validate": true,
-        "forceId": true,
+        "forceId": false,
         "autoId": true
       }
     }
