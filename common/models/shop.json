@@ -42,12 +42,12 @@
     "dailyboard": {
       "type": "hasOne",
       "model": "DailyBoard",
-      "foreignKey": "dailyboardId"
+      "foreignKey": "shopId"
     },
     "nowasteboard": {
       "type": "hasOne",
       "model": "NoWasteBoard",
-      "foreignKey": "nowasteboardId"
+      "foreignKey": "shopId"
     }
   },
   "acls": [

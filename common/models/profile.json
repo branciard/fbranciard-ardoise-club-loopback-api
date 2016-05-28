@@ -12,7 +12,7 @@
     "shop": {
       "type": "hasOne",
       "model": "Shop",
-      "foreignKey": "shopId"
+      "foreignKey": "profileId"
     },
     "dailyboards": {
       "type": "hasMany",
