@@ -8,7 +8,7 @@
   "properties": {},
   "validations": [],
   "relations": {
-      "profile": {
+    "profile": {
       "type": "belongsTo",
       "model": "Profile",
       "foreignKey": "profileId"
