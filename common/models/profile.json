@@ -5,7 +5,14 @@
   "options": {
     "validateUpsert": true
   },
-  "properties": {},
+  "properties": {
+     "peps": {
+      "type": "number",
+      "required": false,
+      "default": 0
+    }
+  },
+
   "validations": [],
   "relations": {
     "shop": {
