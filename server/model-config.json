@@ -26,7 +26,7 @@
     "public": true
   },
   "DailyItem": {
-    "dataSource": "db",
+    "dataSource": "transient",
     "public": false
   },
   "NoWasteBoard": {
@@ -34,7 +34,7 @@
     "public": true
   },
   "NoWasteItem": {
-    "dataSource": "db",
+    "dataSource": "transient",
     "public": false
   },
   "Shop": {
