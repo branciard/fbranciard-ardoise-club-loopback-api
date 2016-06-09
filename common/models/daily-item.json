@@ -6,10 +6,6 @@
     "validateUpsert": true
   },
   "properties": {
-    "itemPosition": {
-      "type": "number",
-      "required": true
-    },
     "name": {
       "type": "string",
       "required": true
