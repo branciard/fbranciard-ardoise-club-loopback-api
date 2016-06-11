@@ -28,6 +28,10 @@
       "type": "string",
       "required": false
     },
+    "mail": {
+      "type": "string",
+      "required": false
+    },
     "city": {
       "type": "string",
       "required": false
