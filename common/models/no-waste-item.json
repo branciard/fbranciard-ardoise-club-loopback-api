@@ -12,8 +12,7 @@
 		"defaultFn": "uuid"
 		},
     "itemRemainingNumber": {
-      "type": "number",
-      "required": true
+      "type": "number"
     },
     "name": {
       "type": "string",
