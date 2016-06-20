@@ -14,6 +14,7 @@ module.exports = function (app) {
   }
   else {
     console.error("no VCAP_SERVICES");
+    
   }
 
 
