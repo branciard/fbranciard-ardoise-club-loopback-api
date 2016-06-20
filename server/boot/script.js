@@ -3,7 +3,11 @@ module.exports = function (app) {
   
   cloudantDB.automigrate('Profile', function (err) {
     if (err) throw (err);
- 
+
+
+    console.error("VCAP_SERVICES object is :");
+    console.error(JSON.parse(process.env.VCAP_SERVICES));
+
     var Profile = app.models.Profile;
     Profile.find({ where: { username: 'Admin' }, limit: 1 }, function (err, users) {
       if (JSON.stringify(users) === '[]') {
