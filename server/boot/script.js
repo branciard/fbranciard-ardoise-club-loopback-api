@@ -8,9 +8,12 @@ module.exports = function (app) {
 
     // Debugging
     for (var svcName in env) {
-      console.log(svcName);
+      console.error(svcName);
     }
-    console.log(env);
+    console.error(env);
+  }
+  else {
+    console.error("no VCAP_SERVICES");
   }
 
 
