@@ -1,12 +1,24 @@
 module.exports = function (app) {
   var cloudantDB = app.dataSources.cloudant;
-  
+
+  // Parse VCAP_SERVICES if running in Bluemix
+  if (process.env.VCAP_SERVICES)
+  {
+    var env = JSON.parse(process.env.VCAP_SERVICES);
+
+    // Debugging
+    for (var svcName in env) {
+      console.log(svcName);
+    }
+    console.log(env);
+  }
+
+
   cloudantDB.automigrate('Profile', function (err) {
     if (err) throw (err);
 
 
-    console.error("VCAP_SERVICES object is :");
-    console.error(JSON.parse(process.env.VCAP_SERVICES));
+
 
     var Profile = app.models.Profile;
     Profile.find({ where: { username: 'Admin' }, limit: 1 }, function (err, users) {
