@@ -1,6 +1,7 @@
 module.exports = function (app) {
-  var cloudantDB = app.dataSources.cloudant;
 
+
+  console.error("VCAP_SERVICES check");
   // Parse VCAP_SERVICES if running in Bluemix
   if (process.env.VCAP_SERVICES)
   {
@@ -14,8 +15,12 @@ module.exports = function (app) {
   }
   else {
     console.error("no VCAP_SERVICES");
-    
+
   }
+
+  var cloudantDB = app.dataSources.cloudant;
+
+
 
 
   cloudantDB.automigrate('Profile', function (err) {
